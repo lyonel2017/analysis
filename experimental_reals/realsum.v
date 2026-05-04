@@ -40,6 +40,7 @@ move/asboolP/exists_asboolP=> h; have := (xchooseP h).
 move: (xchoose _)=> {h} M /asboolP h; exists M => //.
 by have := h fset0; rewrite big_pred0 // => -[x]; rewrite in_fset0.
 Qed.
+
 End Summable.
 
 (* -------------------------------------------------------------------- *)
@@ -130,6 +131,29 @@ by rewrite -mulr_natr natrM mulrC mulfK ?pnatr_eq0// truncnS_gt.
 Qed.
 
 End SummableCountable.
+
+Section SummableEsum.
+Variable (T : choiceType) (R : realType) (f : T -> R).
+
+Lemma esummableP :
+  summable f <-> esum.summable [set: T] (EFin \o f).
+Proof.
+have fsbigsum (B : {fset T}) :
+    (\sum_(x \in [set` B]) `|f x|%:E)%R = (\sum_(x : B) `|f (\val x)|)%:E.
+  rewrite (fsbigE B)//=; first by move=> i ->.
+  by rewrite sumEFin big_seq_fsetE/= (eq_bigl xpredT)// => x; apply/mem_set => /=.
+split.
+  move=> [M fM].
+  rewrite /esum.summable /esum (@le_lt_trans _ _ M%:E) ?ltey//.
+  apply/ereal_supP => _/= [A [/finite_fsetP[B AB] _] <-].
+  by rewrite AB fsbigsum; exact: fM.
+rewrite /summable => H.
+exists (fine (\esum_(x in [set: T]) `|(EFin \o f) x|))%E => J/=.
+rewrite -lee_fin -fsbigsum fineK.
+  by rewrite ge0_fin_numE// esum_ge0.
+by rewrite -esum_fset// subset_esum.
+Qed.
+End SummableEsum.
 
 (* -------------------------------------------------------------------- *)
 Section PosCnv.
