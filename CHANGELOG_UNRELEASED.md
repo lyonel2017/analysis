@@ -92,6 +92,23 @@
   + lemma `diffmx`
   + lemma `is_diff_mx`
   + instance `is_diff_mx`
+- in `realsum.v`:
+  + lemma `esum_psum`
+  + lemma `sum_sum`
+
+- in `esum.v`:
+  + lemmas `esum_eq0P`, `esumZ`, `esum_esum'`
+  + definition `esg`
+  + lemmas `numEsg`, `gte0_esg`, `lte0_esg`, `esg0`
+  + lemmas `ge0_funeneg`, `ge0_funepos`, `funepos_cst0`, `funeneg_cst0`,
+    `le_funepos`
+  + definition `sum`
+  + lemmas `sum0`, `eq_sum`, `esum_unit`, `sum_unit`
+  + lemmas `esum_sum'`, `sum_ge0`, `le_sum`, `sumN`, `sumZ`
+  + lemmas `summable_le_sum`, `summable_esum_funepos`, `summable_sumN`,
+    `summableZ`, `summable_sumZ`
+  + lemmas `ereal_sup_comm`
+  + lemmas `esupZl`, `esupZl_range`, `esup_add`, `ereal_sup_sum`, `esum_esup_comm`
 
 ### Changed
 
@@ -182,6 +199,18 @@
   + lemmas `Radon_NikodymE`, `Radon_Nikodym_fin_num`, `Radon_Nikodym_integrable`,
     `ae_eq_Radon_Nikodym_SigmaFinite`, `Radon_Nikodym_change_of_variables`,
     `Radon_Nikodym_cscale`, `Radon_Nikodym_cadd`, `Radon_Nikodym_chain_rule`
+- in `realsum.v`:
+  + now use `funrpos` and `funrneg`:
+    * lemmas `eq_fpos`, `eq_fneg`
+    * lemma `fpos0` (renamed to `funrpos_cst0`)
+    * lemma `fneg0` (renamed to `funrneg_cst0`)
+    * lemmas `fposZ`, `fnegZ`
+    * lemmas `fpos_natrM`, `fneg_natrM`
+    * lemmas `fneg_ge0`, `fpos_ge0`
+    * lemmas `le_fpos_norm`, `le_fpos`
+    * definition `sum`
+    * lemmas `summable_fpos`, `summable_fneg`
+  + lemma `sum0` (now uses `cst`)
 
 ### Renamed
 
@@ -262,6 +291,12 @@
 
 - in `measurable_structure.v`:
   + lemmas `measurable_prod_g_measurableType`, `measurable_prod_g_measurableTypeR`
+
+- in `realsum.v`:
+  + definitions `fpos`, `fneg` (use `funrpos`, `funrneg` instead)
+  + lemmas `fnegN`, `fposN`
+  + lemmas `ge0_pos`, `ge0_neg`
+  + lemma `fposBfneg`
 
 ### Infrastructure
 
