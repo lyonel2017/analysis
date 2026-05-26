@@ -617,7 +617,7 @@ jobs:
   mathcomp-experimental-reals:
     needs:
     - rocq-core
-    - mathcomp-reals
+    - mathcomp-analysis
     - mathcomp-bigenough
     runs-on: ubuntu-latest
     steps:
