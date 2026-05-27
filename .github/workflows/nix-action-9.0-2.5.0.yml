@@ -423,7 +423,7 @@ jobs:
   mathcomp-experimental-reals:
     needs:
     - rocq-core
-    - mathcomp-reals
+    - mathcomp-analysis
     runs-on: ubuntu-latest
     steps:
     - name: Determine which commit to initially checkout
