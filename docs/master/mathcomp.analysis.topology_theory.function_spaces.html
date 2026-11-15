@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.topology_theory.function_spaces</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 013decd 2026.11.14-22:34" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 013decd 2026.11.15-23:05" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -2089,6 +2089,18 @@ Expands to: Constant
             mathcomp.analysis.topology_theory.compact.locally_compact
 Declared in
 library mathcomp.analysis.topology_theory.compact, line 282, characters 11-26
+finite_subset_cover :
+forall [I : choiceType],
+set I -> forall [U : Type], (I -> set U) -> set U -> Prop
+
+finite_subset_cover is not universe polymorphic
+Arguments finite_subset_cover [I] D%_classical_set_scope 
+  [U]%_type_scope F%_function_scope A%_classical_set_scope
+finite_subset_cover is transparent
+Expands to: Constant
+            mathcomp.analysis.topology_theory.compact.finite_subset_cover
+Declared in
+library mathcomp.analysis.topology_theory.compact, line 286, characters 11-30
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/013decdd3294fa5af62b9bf896b282ab7639e20c/theories/topology_theory/function_spaces.v#L1607' target='_blank'>Source code</a></span></div></span><span class="id"> {</span><span id="X:642" class="id"><div name="X:642" class="id anchor tooltip">X<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/013decdd3294fa5af62b9bf896b282ab7639e20c/theories/topology_theory/function_spaces.v#L1607' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="Y:643" class="id"><div name="Y:643" class="id anchor tooltip">Y<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/013decdd3294fa5af62b9bf896b282ab7639e20c/theories/topology_theory/function_spaces.v#L1607' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Topological.Exports.topologicalType">topologicalType</a></span><span class="id">}</span><span class="id"> :</span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Continuous.Exports.continuousType">continuousType</a></span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#X:642">X</a></span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#Y:643">Y</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#X:642">X</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Notations.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Notations.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#Y:643">Y</a></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#uncurry">uncurry</a></span> (<span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#id">id</a></span><span class="id"> :</span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.topology_structure.html#Continuous.Exports.continuousType">continuousType</a></span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#X:642">X</a></span><span class="id"> </span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#Y:643">Y</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Notations.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span> (<span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#X:642">X</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Notations.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id link"><a href="https://rocq-prover.org/corelib/Corelib.Init.Notations.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id link"><a href="mathcomp.analysis.topology_theory.function_spaces.html#Y:643">Y</a></span>)).<br/>
 <br/>
